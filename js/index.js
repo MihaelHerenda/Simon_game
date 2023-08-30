@@ -1,8 +1,8 @@
-let green = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/green.mp3");
-let yellow = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/yellow.mp3");
-let red = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/red.mp3");
-let blue = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/blue.mp3");
-let wrong = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/wrong.mp3");
+let green = new Audio("sounds/green.mp3");
+let yellow = new Audio("sounds/yellow.mp3");
+let red = new Audio("sounds/red.mp3");
+let blue = new Audio("sounds/blue.mp3");
+let wrong = new Audio("sounds/wrong.mp3");
 let gameStarted = false;
 let level = 0;
 let orderOfSquaresArr = [];
@@ -26,7 +26,7 @@ function resetAll() {
 }
 
 function wrongPress() {
-  let wrong = new Audio("https://github.com/MihaelHerenda/Simon_game/blob/main/sounds/wrong.mp3");
+  let wrong = new Audio("sounds/wrong.mp3");
   wrong.play();
   $("body").css("background-color", "red");
   setTimeout(function () {
