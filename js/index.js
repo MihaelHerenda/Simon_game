@@ -31,7 +31,7 @@ function wrongPress() {
   $("body").css("background-color", "red");
   setTimeout(function () {
     $("body").css("background-color", "#183D3D");
-  }, 200);
+  }, 250);
 }
 
 function generateSquare() {
@@ -41,7 +41,7 @@ function generateSquare() {
   orderOfSquaresArr.push(squareNr);
   let nextSquare = squareNumberDict[squareNr];
   $("." + nextSquare)
-    .animate({ opacity: 0.2 })
+    .animate({ opacity: 0.15 })
     .animate({ opacity: 1 });
   $("h1").html("Level " + level);
   return squareNr;
@@ -75,6 +75,9 @@ $(".button-style").click(function (e) {
     pressCounter = 0;
     return;
   } else if (e.target.id == orderOfSquaresArr[pressCounter]) {
+    $("." + squareNumberDict[e.target.id])
+    .animate({ opacity: 0.55})
+    .animate({ opacity: 1 });
     squareSoundDict[e.target.id].play();
     pressCounter++;
     if (pressCounter == orderOfSquaresArr.length) {
@@ -84,6 +87,7 @@ $(".button-style").click(function (e) {
   } else {
     wrongPress();
     resetAll();
+    orderOfSquaresArr = [];
     pressCounter = 0;
     level = 0;
     gameStarted = false;
